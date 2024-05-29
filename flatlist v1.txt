@@ -1,0 +1,133 @@
+versoes passadas da flatlist
+
+flatlist normal (erro na ordem, eles estao em coluna)
+
+
+import { Text, View, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native';
+import React, { useDebugValue, useEffect, useState } from 'react';
+
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+const dados = [
+  {
+    id: 1,
+    emocao: "feliz",
+    imagem: require('../assets/smile.png')
+  },
+
+  {
+    id: 2,
+    emocao: "triste",
+    imagem: require('../assets/sad.png')
+  },
+
+  {
+    id: 3,
+    emocao: "irritado",
+    imagem: require('../assets/irritado.png')
+  },
+
+  {
+    id: 4,
+    emocao: "calmo",
+    imagem: require('../assets/calm.png')
+  },
+
+  {
+    id: 5,
+    emocao: "depressivo",
+    imagem: require('../assets/depressive.png')
+  },
+
+  {
+    id: 6,
+    emocao: "surpreso",
+    imagem: require('../assets/surpreso.png')
+  },
+
+  {
+    id: 7,
+    emocao: "cansado",
+    imagem: require('../assets/fadiga.png')
+  },
+
+  {
+    id: 8,
+    emocao: "neutro",
+    imagem: require('../assets/neutro.png')
+  },
+
+  {
+    id: 9,
+    emocao: "ansioso",
+    imagem: require('../assets/ansiedade.png')
+  },
+
+  {
+    id: 10,
+    emocao: "sonolento",
+    imagem: require('../assets/sonolento.png')
+  },
+
+  {
+    id: 11,
+    emocao: "doente",
+    imagem: require('../assets/doente.png')
+  },
+
+  {
+    id: 12,
+    emocao: "envergonhado",
+    imagem: require('../assets/envergonhado.png')
+  },
+]
+
+
+export default function Stats({ navigation }) {
+  return (
+    <SafeAreaView style={styles.container}>
+
+      <View style={styles.superiorBar}>
+
+        <TouchableOpacity style={styles.perfil}>
+          <Image source={require('../assets/minicerebro.png')} style={{ resizeMode: 'stretch', width: 35, height: 35 }} />
+        </TouchableOpacity>
+        <View style={styles.barraXP}><Text>Barra xp</Text></View>
+
+      </View>
+
+      <View style={styles.viewText}>
+
+        <Text style={styles.textStyleTitle}>
+          Como você está se sentindo hoje?
+        </Text>
+
+      </View>
+
+      <View style={styles.containerEmocoes}>
+
+
+        <FlatList 
+        data = {dados}
+        renderItem={({ item })=> 
+        <View style={{alignSelf: 'flex-start'}}>
+          <TouchableOpacity
+          style={styles.viewEmocao}
+          onPress={() => navigation.navigate('Diario', { emocao: item.emocao })}
+        >
+          <Image style={styles.bxEmocao} source={item.imagem} />
+        </TouchableOpacity>
+        </View>
+        }
+        />
+
+
+      </View>
+
+
+
+    </SafeAreaView>
+  );
+
+}
+
