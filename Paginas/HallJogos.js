@@ -40,12 +40,12 @@ export default function Agenda({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffff',
+    backgroundColor: '#6CB1F1',
     paddingHorizontal: 6,
   },
 
   botaoTutorial: {
-    backgroundColor: 'yellow',
+    backgroundColor: '#fff',
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 10,
@@ -55,14 +55,14 @@ const styles = StyleSheet.create({
   },
 
   botaoTutorialTxt: {
-    color: 'black',
+    color: '#2d5986',
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center'
   },
 
   botaoIntroducao: {
-    backgroundColor: 'yellow',
+    backgroundColor: '#fff',
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 10,
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   },
 
   botaoIntroducaoTxt: {
-    color: 'black',
+    color: '#2d5986',
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center'
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
 
   btnStyle: {
     borderRadius: 100,
-    backgroundColor: '#6CB1F1',
+    backgroundColor: '#ff900e',
     padding: 7,
     width: 50,
     height: 50,
